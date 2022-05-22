@@ -8,16 +8,17 @@
     </button>
 
     <!-- Topbar Search -->
-    <form
+    <form style="{width: 100vw; display: flex}"
         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-        <div class="input-group">
+        <div class="input-group" style="{width: 100%; display: flex}">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary" type="button">CreateView
                     <i class="fas fa-search fa-sm"></i>
                 </button>
             </div>
+           <a href="{% url 'add_post' %}" class="btn btn-primary" style="{margin-left: auto}">Create post</a>
         </div>
     </form>
 

@@ -1,7 +1,9 @@
 from django.contrib.auth import logout, authenticate, login, get_user_model
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views import View
-
+from django.views.generic import CreateView
+from mainapp.forms import PostForm
 from mainapp.models import Post
 
 User = get_user_model()
@@ -82,3 +84,9 @@ class Profile(View):
         user.email = request.POST.get('email')
         user.save()
         return redirect('/')
+
+
+class AddPost(CreateView):
+    form_class = PostForm
+    template_name = "add_post.html"
+    success_url = reverse_lazy("main")
